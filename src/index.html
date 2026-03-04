@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tubdown</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Tubdown</h1>
+      <p class="subtitle">YouTube downloader for Windows</p>
+
+      <label for="url">YouTube URL</label>
+      <input id="url" placeholder="https://www.youtube.com/watch?v=..." />
+
+      <label for="mode">Download mode</label>
+      <select id="mode">
+        <option value="video">Video (MP4)</option>
+        <option value="audio">Audio only (MP3)</option>
+      </select>
+
+      <label for="output">Output folder</label>
+      <div class="row">
+        <input id="output" placeholder="Choose where file is saved" />
+        <button id="browse" type="button">Browse</button>
+      </div>
+
+      <div class="row actions">
+        <button id="download" type="button">Download</button>
+        <button id="cancel" type="button" class="ghost">Cancel</button>
+      </div>
+
+      <p id="status" class="status">Idle</p>
+      <pre id="log" class="log"></pre>
+
+      <p class="hint">
+        Note: install <code>yt-dlp</code> and <code>ffmpeg</code> on Windows, or bundle
+        <code>yt-dlp.exe</code> in <code>resources/bin</code>.
+      </p>
+    </main>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

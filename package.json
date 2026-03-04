@@ -1,0 +1,37 @@
+{
+  "name": "tubdown",
+  "version": "1.0.0",
+  "description": "Windows desktop UI app for downloading YouTube videos",
+  "main": "main.js",
+  "author": "Tubdown",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^30.1.2",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.tubdown.app",
+    "productName": "Tubdown",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "target": "nsis",
+      "artifactName": "Tubdown-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
